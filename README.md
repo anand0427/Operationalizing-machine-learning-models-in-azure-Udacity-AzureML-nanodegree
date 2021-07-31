@@ -33,13 +33,13 @@ To train an automl model a few steps need to be executed to setup the experiemen
 6. Create automl config to use compute, data, target and early stopping
 7. Submit the experiment and wait for completion. 
 
-* Experiment Completed
+* The experiment will create a few child runs and show completed when the best model is found or when there is no further improvement. The experiment is then marked completed which moves us on to the next step that is deployment. 
 ![Diagram](./screenshots/3.PNG?raw=true "Running experiment")
 * Best Models with Voting Ensemble achieving an accuracy of 0.9168
 ![Diagram](./screenshots/4.PNG?raw=true "Best Models")
 ![Diagram](./screenshots/5.PNG?raw=true "Best Models")
 
-* Running logs script to enable Application insights
+* We choose the best model for deployment and enable "Authentication" while deploying the model using Azure Container Instance (ACI). The executed code in logs.py enables Application Insights. "Application Insights enabled" is disabled before executing logs.py.
 ![Diagram](./screenshots/6.PNG?raw=true "Logs") 
 ![Diagram](./screenshots/7.PNG?raw=true "Logs")
 ![Diagram](./screenshots/8.PNG?raw=true "Best Models")
@@ -54,7 +54,7 @@ After creating the AutoML model and Pipeline, we get the best model and have to 
 
 ![Diagram](./screenshots/9.PNG?raw=true "Endpoint")
 
-* Pipeline being shown active
+* When the pipeline is deployed and it goes from a transition phase to a healthy phase the pipeline that is live is marked as active. We can use this endpoint now to make API requests and get our results with the model.
 
 ![Diagram](./screenshots/23.PNG?raw=true "pipeline]")
 ![Diagram](./screenshots/22.PNG?raw=true "pipeline")
@@ -101,7 +101,7 @@ Input:
 
 ![Diagram](./screenshots/13.PNG?raw=true "Endpoint")
 
-* Benchmarking the API 
+* We run the benchmark shell file to send multiple requests to the endpoint and log various details. 
 
 ![Diagram](./screenshots/14.PNG?raw=true "bench mark")
 ![Diagram](./screenshots/15.PNG?raw=true "bench mark")
@@ -112,7 +112,7 @@ Input:
 
 Look at the screenshots folder for more images. This screen recording gives a short overview of the project in action.
 
-https://www.youtube.com/watch?v=TTyaFGE1Jq8
+https://youtu.be/LhCW3kwu8-A
 
 ## Standout Suggestions
 
